@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrestamosJuegosAP1.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,33 @@ namespace PrestamosJuegosAP1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void Registroamigo_Click(object sender, RoutedEventArgs e)
+        {
+             rAmigos ramigos = new rAmigos();
+            ramigos.Show();
+        }
+
+        private void Registroentrada_Click(object sender, RoutedEventArgs e)
+        {
+            rEntradas rentradas = new rEntradas();
+            rentradas.Show();
+
+        }
+
+        private void Registrojuego_Click(object sender, RoutedEventArgs e)
+        {
+            rJuegos rjuegos = new rJuegos();
+            rjuegos.Show();
+        }
+
+        private void Registroprestamo_Click(object sender, RoutedEventArgs e)
+        {
+            rPrestamos rprestamos = new rPrestamos();
+            rprestamos.Show();
         }
     }
 }

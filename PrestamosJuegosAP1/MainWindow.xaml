@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Content="rAmigos" x:Name="Registroamigo" HorizontalAlignment="Left" Margin="191,176,0,0" VerticalAlignment="Top" Width="91" Height="41" Click="Registroamigo_Click"/>
+        <Button Content="rEntradas" x:Name="Registroentrada" HorizontalAlignment="Left" Margin="357,196,0,0" VerticalAlignment="Top" Height="46" Width="103" Click="Registroentrada_Click"/>
+        <Button Content="rJuegos" x:Name="Registrojuego" HorizontalAlignment="Left" Margin="191,264,0,0" VerticalAlignment="Top" Height="42" Width="91" Click="Registrojuego_Click"/>
+        <Button Content="rPrestamos" x:Name="Registroprestamo" HorizontalAlignment="Left" Margin="400,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.489,-1.418" Height="32" Width="95" Click="Registroprestamo_Click"/>
+
 
     </Grid>
 </Window>

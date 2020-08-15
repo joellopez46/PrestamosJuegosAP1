@@ -158,7 +158,7 @@ namespace PrestamosJuegosAP1.BLL
             return lista;
         }
 
-        public static List<Amigos> GetAmigos(Expression<Func<Amigos, bool>> criterio)
+        public static List<Amigos> GetList(Expression<Func<Amigos, bool>> criterio)
         {
             Contexto contexto = new Contexto();
             List<Amigos> lista = new List<Amigos>();

@@ -5,59 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrestamosJuegosAP1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Juegos" Height="290" Width="280">
+        Title="Registro Juegos" Height="330" Width="320">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="4,0,4,0">
             <StackPanel Orientation="Vertical">
-                <Label Content="EntradaId:"/>
-                <!-- -->
+                <Label Content="JuegoId:"/>
+
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="EntradaIdTextBox" Text="{Binding EntradaId}" Width="100" Height="18"/>
-                    <Button x:Name="BuscarButton" Margin="6,0" >
-                        <StackPanel Orientation="Horizontal">
-                            
-                            <Label Content="Buscar"/>
-                        </StackPanel>
+                    <TextBox x:Name="JuegoIdTextBox" Text="{Binding JuegoId}" Width="100" Height="18"/>
+                    <Button Content="Buscar" HorizontalContentAlignment="Left" x:Name="BuscarButton" Margin="6,0" Click="BuscarButton_Click" Height="21" Width="66" >
+                        <Button.Background>
+                            <ImageBrush   ImageSource="/Resources/buscar11.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                        </Button.Background>
                     </Button>
                 </StackPanel>
 
-                <!---->
-                <Label Content="Fecha"/>
-                <DatePicker Name="FechaDatePicker"  SelectedDate="{Binding FechaEntrada,StringFormat=dd/MM/yyyy}"   />
+                <Label Content="Fecha Compra"/>
+                <DatePicker Name="FechaDatePicker"  SelectedDate="{Binding FechaCompra,StringFormat=dd/MM/yyyy}"   />
 
-                <Label Content="JuegoId:"/>
-                <!--<TextBox x:Name="JuegoIdTextBox" Text="{Binding JuegoId}"/>-->
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="JuegoIdComboBox" SelectedValue="{Binding JuegoId}" Width="100"/>
-                </StackPanel>
-                <Label Content="Cantidad:" />
-                <TextBox x:Name="CantidadTextBox" Text="{Binding Cantidad}"/>
+                <Label Content="Descripcion:"/>
+                <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}" />
+
+                <Label Content="Precio:"/>
+                <TextBox x:Name="PrecioTextBox" Text="{Binding Precio}"/>
+
+                <Label Content="Existencia:"/>
+                <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" IsEnabled="False"/>
 
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="32,15">
-                <Button x:Name="NuevoButton">
-                    <StackPanel Orientation="Horizontal">
-                        
-                        <Label Content="Nuevo"/>
-                    </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,15">
+                <Button x:Name="NuevoButton" HorizontalContentAlignment="Left" Content="Nuevo" Click="NuevoButton_Click" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/nuevo mas.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
                 </Button>
 
-                <Button x:Name="GuardarButton" Margin="15,0" >
-                    <StackPanel Orientation="Horizontal">
-                        
-                        <Label Content="Guardar"/>
-                    </StackPanel>
+                <Button x:Name="GuardarButton" Content="Guardar" HorizontalContentAlignment="Left" Margin="15,0" Click="GuardarButton_Click" Width="66" Height="21" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/guardar.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
                 </Button>
-
-                <Button x:Name="EliminarButton" >
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Eliminar"/>
-                    </StackPanel>
+                
+                <Button x:Name="EliminarButton" Content="Eliminar" HorizontalContentAlignment="Left" Click="EliminarButton_Click" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/elimirar121.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" TileMode="None" />
+                    </Button.Background>
                 </Button>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </Window>

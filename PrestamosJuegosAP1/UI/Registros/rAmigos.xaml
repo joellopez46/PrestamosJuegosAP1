@@ -5,23 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrestamosJuegosAP1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Amigos" Height="420" Width="320">
+        Title="Registro Amigos" Height="420" Width="390">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="4,0,4,0">
             <StackPanel Orientation="Vertical">
                 <Label Content="AmigoId:"/>
-                <!-- -->
+                
                 <StackPanel Orientation="Horizontal">
                     <TextBox x:Name="AmigoIdTextBox" Text="{Binding AmigoId}" Width="100" Height="18"/>
-                    <Button x:Name="BuscarButton" Margin="6,0" >
-                        <StackPanel Orientation="Horizontal">
-                            
-                            <Label Content="Buscar"/>
-                        </StackPanel>
+                    <Button Content="Buscar" HorizontalContentAlignment="Left" x:Name="BuscarButton" Margin="6,0" Click="BuscarButton_Click" Width="66" Height="21" >
+                        <Button.Background>
+                            <ImageBrush   ImageSource="/Resources/buscar11.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                        </Button.Background>
                     </Button>
                 </StackPanel>
 
-                <!---->
                 <Label Content="Nombres:"/>
                 <TextBox x:Name="NombresTextBox" Text="{Binding Nombres}" />
 
@@ -37,38 +35,31 @@
                 <Label Content="Email:"/>
                 <TextBox x:Name="EmailTextBox" Text="{Binding Email}"/>
 
-
-
-
             </StackPanel>
 
             <Label Content="Fecha"/>
             <DatePicker Name="FechaNacimientoDatePicker"  SelectedDate="{Binding FechaNacimiento,StringFormat=dd/MM/yyyy}"   />
 
+            <StackPanel Orientation="Horizontal" Margin="10,15" Width="225">
+                <Button  Content="Nuevo" HorizontalContentAlignment="Left" x:Name="NuevoButton" Click="NuevoButton_Click" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/nuevo mas.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
 
-            <StackPanel Orientation="Horizontal" Margin="10,15">
-                <Button x:Name="NuevoButton" >
-                    <StackPanel Orientation="Horizontal">
-                        
-                        <Label Content="Nuevo"/>
-                    </StackPanel>
                 </Button>
 
-                <Button x:Name="GuardarButton" Margin="15,0" >
-                    <StackPanel Orientation="Horizontal">
-                       
-                        <Label Content="Guardar"/>
-                    </StackPanel>
-                </Button>
+                <Button Content="Guardar" HorizontalContentAlignment="Left" x:Name="GuardarButton" Margin="15,0" Click="GuardarButton_Click" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/guardar.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
 
-                <Button x:Name="EliminarButton"  >
-                    <StackPanel Orientation="Horizontal">
-                        
-                        <Label Content="Eliminar"/>
-                    </StackPanel>
+                </Button>
+                <Button Content="Eliminar" HorizontalContentAlignment="Left" x:Name="EliminarButton" Click="EliminarButton_Click" RenderTransformOrigin="0.535,0.592" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/elimirar121.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" TileMode="None" />
+                    </Button.Background>
                 </Button>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </Window>

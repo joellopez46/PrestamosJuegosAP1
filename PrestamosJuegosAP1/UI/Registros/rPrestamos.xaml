@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrestamosJuegosAP1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Prestamos" Height="490" Width="720">
+        Title="Registro Prestamos" Height="510" Width="570">
     <Grid>
         <StackPanel Orientation="Vertical" >
-            <Label Content="Prestamo Id" />
+            <Label Content="PrestamoId" />
 
             <StackPanel Orientation="Horizontal" >
 
                 <TextBox x:Name="PrestamoIdTextBox" Width="150" Text="{Binding PrestamoId}" Height="22"/>
 
-                <Button Name="BucarButton" Margin="20,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Buscar" Height="27" />
-                    </StackPanel>
+                <Button Content="Buscar" HorizontalContentAlignment="Left" x:Name="BuscarButton" Margin="6,0" Click="BuscarButton_Click" Height="21" Width="66" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/buscar11.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
+
                 </Button>
             </StackPanel>
-
 
             <StackPanel Orientation="Vertical">
                 <Label Content="Fecha" />
@@ -28,42 +28,48 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" >
-                <Label Content="Amigo Id" />
-                <TextBox Name="ClienteIdTextBox" Text="{Binding AmigoId}"  />
+                <Label Content="AmigoId" />
+                <ComboBox Name="AmigoIdComboBox" SelectedValue="{Binding AmigoId}" Margin="0,0" Cursor=""/>
             </StackPanel>
 
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Observación (Opcional):" />
+                <TextBox x:Name="ObservacionTextBox" Width="200" Text="{Binding Observacion}" Height="22"/>
+                <Label Content="Cantidad Juegos"/>
+                <TextBox x:Name="CantidadJuegosTextBox" Text="{Binding CantidadJuegos}" Height="22" Width="75" IsEnabled="False"/>
 
-            <GroupBox Header="Prestamo Detalle" BorderBrush="#FF414649"   >
+            </StackPanel>
+
+            <GroupBox Header="Prestamo Detalle" BorderBrush="#FF414649">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" >
 
                         <Label Content="Juego Id" />
-                        <ComboBox x:Name="JuegoIdComboBox" SelectedValue="{Binding JuegoId}" Width="45"/>
-                        <Label Content="Descripcion" FontSize="14" Margin="25,0,0,0" Width="81"/>
-                        <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}" Width="104" />
-                        <Label Content="Cantidad" FontSize="14" Margin="0,0,0,0"/>
+                        <ComboBox x:Name="JuegoIdComboBox" SelectedValue="{Binding JuegoId}" Width="108"/>
+                        <Label Content="Cantidad"/>
                         <TextBox x:Name="CantidadTextBox" Text="{Binding Cantidad}" Width="80" />
 
-                        <Button Name="AgregarButton" Width="88" Height="23" Margin="22,0,5,0" >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Agregar" Margin="4,0" Padding="-1"/>
-                            </StackPanel>
+                        <Button Name="AgregarButton" Content="Agregar" HorizontalContentAlignment="Left" Width="84" Height="23" Margin="22,0,5,0" Click="AgregarButton_Click" >
+                            <Button.Background>
+                                <ImageBrush   ImageSource="/Resources/nuevo mas.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                            </Button.Background>
                         </Button>
 
-                        <Button Name="RemoverButton" Width="94" Height="23" Margin="5,0" >
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Remover" Margin="4,0" Padding="-1"/>
-                            </StackPanel>
+                        <Button Name="RemoverButton" Content="Remover" HorizontalContentAlignment="Left" Width="84" Height="23" Margin="5,0" Click="RemoverButton_Click">
+                            <Button.Background>
+                                <ImageBrush   ImageSource="/Resources/eliminar12.jpg" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" TileMode="None" />
+                            </Button.Background>
                         </Button>
 
                     </StackPanel>
-                    <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" AlternatingRowBackground="#FFBAE3FF" AutoGenerateColumns="False" Margin="0,5,0,0" Width="675"  Height="189">
+                    <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding PrestamosDetalles}" AlternatingRowBackground="#FFBAE3FF" AutoGenerateColumns="False" Margin="0,5,0,0" Width="500"  Height="189">
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id"  Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Cantidad"  Binding="{Binding Cantidad}"/>
                             <DataGridTextColumn Header="Descripción"  Binding="{Binding Descripcion}"/>
                             <DataGridTextColumn Header="JuegoId"  Binding="{Binding JuegoId}"/>
+
                         </DataGrid.Columns>
                     </DataGrid>
 
@@ -72,26 +78,24 @@
             </GroupBox>
 
             <StackPanel Orientation="Horizontal" Margin="130,15" Width="255">
-                <Button x:Name="NuevoButton" >
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Nuevo"/>
-                    </StackPanel>
+                <Button x:Name="NuevoButton" HorizontalContentAlignment="Left" Content="Nuevo" Click="NuevoButton_Click" Height="30" Width="80" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/nuevo mas.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
                 </Button>
 
-                <Button x:Name="GuardarButton" Margin="15,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Guardar"/>
-                    </StackPanel>
+                <Button x:Name="GuardarButton" Content="Guardar" HorizontalContentAlignment="Left" Margin="15,0" Click="GuardarButton_Click" Width="75" Height="30" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/guardar.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" />
+                    </Button.Background>
                 </Button>
 
-                <Button x:Name="EliminarButton" >
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Eliminar"/>
-                    </StackPanel>
+                <Button x:Name="EliminarButton" Content="Eliminar" HorizontalContentAlignment="Left" Click="EliminarButton_Click" Height="30" Width="75" >
+                    <Button.Background>
+                        <ImageBrush   ImageSource="/Resources/elimirar121.png" Stretch="Uniform" AlignmentX="Right" AlignmentY="Center" TileMode="None" />
+                    </Button.Background>
                 </Button>
             </StackPanel>
-
         </StackPanel>
-
     </Grid>
 </Window>

@@ -5,13 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrestamosJuegosAP1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="360">
     <Grid>
-        <Button Content="rAmigos" x:Name="Registroamigo" HorizontalAlignment="Left" Margin="191,176,0,0" VerticalAlignment="Top" Width="91" Height="41" Click="Registroamigo_Click"/>
-        <Button Content="rEntradas" x:Name="Registroentrada" HorizontalAlignment="Left" Margin="357,196,0,0" VerticalAlignment="Top" Height="46" Width="103" Click="Registroentrada_Click"/>
-        <Button Content="rJuegos" x:Name="Registrojuego" HorizontalAlignment="Left" Margin="191,264,0,0" VerticalAlignment="Top" Height="42" Width="91" Click="Registrojuego_Click"/>
-        <Button Content="rPrestamos" x:Name="Registroprestamo" HorizontalAlignment="Left" Margin="400,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.489,-1.418" Height="32" Width="95" Click="Registroprestamo_Click"/>
 
+        <StackPanel Grid.ColumnSpan="3">
+            <Menu Height="23">
+                <MenuItem Header="   Registros" Width="94"   >
+                    <MenuItem x:Name="AmigosMenuItem" Header="Amigos" Click="AmigosMenuItem_Click" >
+                    </MenuItem>
+                    <MenuItem  x:Name="JuegosMenuItem" Header="Juegos" Click="JuegosMenuItem_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="PrestamosMenuItem" Header="Prestamos" Click="PrestamosMenuItem_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="EntradasMenuItem" Header="Entradas" Click="EntradasMenuItem_Click">
+                    </MenuItem>
 
+                </MenuItem>
+                
+                <MenuItem Header="   Consultas"  Height="26" Width="94"  >
+                    <MenuItem Name="AmigoMenuItem" Header="Consulta Amigos" Click="AmigoMenuItem_Click"/>
+                    <MenuItem Name="JuegoMenuItem" Header="Consulta Juegos" Click="JuegoMenuItem_Click" />
+                    <MenuItem Name="PrestamoMenuItem" Header="Consulta Prestamos" Click="PrestamoMenuItem_Click"/>
+                    <MenuItem Name="EntradaMenuItem" Header="Consulta Entradas" Click="EntradaMenuItem_Click" />
+
+                </MenuItem>
+
+                <MenuItem Header="   Ayuda" Width="72" >
+                    <MenuItem x:Name="InformacionMenuItem" Header="Informacion" Click="InformacionMenuItem_Click" />
+                </MenuItem>
+            </Menu>
+            <StackPanel>
+               
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

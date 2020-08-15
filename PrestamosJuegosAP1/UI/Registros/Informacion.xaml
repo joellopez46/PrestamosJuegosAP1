@@ -1,0 +1,17 @@
+﻿<Window x:Class="PrestamosJuegosAP1.UI.Registros.Informacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrestamosJuegosAP1.UI.Registros"
+        mc:Ignorable="d"
+        Title="Informacion" Height="300" Width="350">
+    <Grid>
+        <Label>
+            <TextBlock Text="Creado por: JOEL ANTONIO LOPEZ JAVIER." TextWrapping="Wrap" Height="16" Width="300" HorizontalAlignment="Left"/>
+        </Label>
+        <Label>
+        </Label>
+        <TextBox HorizontalAlignment="Center" Margin="0,44,0,0" Text="Este registro es para agregar videosjuegos, que le alquiles o preste a algun amigo, puedes registrar amigos, videosjuegos y cada prestamos que haga, tambien puedes consultar, amigos agregados, videosjuegos agregados prestamos de juegos, GRACIAS POR SU TIEMPO." TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Height="148"/>
+    </Grid>
+</Window>
